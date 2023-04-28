@@ -1,10 +1,10 @@
 @font-face {
   font-family: my-cool-font;
-  src: url(../fonts/the-font-file.woff);
+  src: url("../fonts/the-font-file.woff");
 }
 @font-face {
   font-family: my-cool-font;
-  src: url(../fonts/the-font-file-bold.woff);
+  src: url("../fonts/the-font-file-bold.woff");
   font-weight: bold;
 }
 
