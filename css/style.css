@@ -12,6 +12,7 @@
   --system-ui: 'Norse', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   --bg-section: #E5E7EB;/* very light gray */
+  --bg-section-shadow: rgba(127, 129, 133, 0.5);/* exactly 40% darker shadow */
   --bg-button: #596D48;/* green */
   --pad-right-section: 10%;
   --pad-left-section: 5%;
@@ -20,10 +21,11 @@
 * {
   margin: 0;
   padding: 0;
-  outline: 2px solid red;
+  /* outline: 2px solid red; */
 }
 
 body {
+  background: black;
   display: flex;
   margin-left: 10%;
   margin-right: 10%;
@@ -31,12 +33,7 @@ body {
 
 
 .sidebar {
-  /* background-image: var(--img-sidebar); */
-  /* background-size: contain; */
-  /* background-repeat: no-repeat; */
-  /* width: calc( 100% / 3); */
-  /* height: 100vh; */
-
+  flex: 1 1 0;/* maintains a flex-grow ratio 1:2 with .content */
   position: relative;
 }
 
@@ -59,8 +56,8 @@ body {
   height: 3em;
 }
 .sidebar > img {
-  width: calc( 100vw / 3 );
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 .sidebar > .img-credit {
   position: absolute;
@@ -72,6 +69,7 @@ body {
 }
 
 .content {
+  flex: 2 1 0;/* maintains a 2:1 flex-grow ratio with .sidebar */
 }
 .content > * {
   height: calc( 100% / 3 );
@@ -85,7 +83,9 @@ body {
 }
 .content > form {
   background: white;
-  box-shadow: 2rem 2rem black;
+  position: relative;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0 0.5rem 2px 1px var(--bg-section-shadow);
 }
 .content > .create-login {
 }
