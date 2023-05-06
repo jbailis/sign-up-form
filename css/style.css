@@ -78,8 +78,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-.content * {
-}
 .content > * {
   /* height: calc( 100% / 3 ); */
   flex: 1;
@@ -96,6 +94,15 @@ body {
   position: relative;
   /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: 0 0.5rem 2px 1px var(--bg-section-shadow);
+}
+form > section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%;
+}
+input,
+label {
+  display: block;
 }
 .content > .create-login {
 }
